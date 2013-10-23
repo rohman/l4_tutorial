@@ -1,6 +1,7 @@
 /bootstrap/compiled.php
 /vendor
+/public/uploads
 composer.phar
 composer.lock
 .DS_Store
-Thumbs.db
+_article

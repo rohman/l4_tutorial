@@ -9,8 +9,13 @@ class DatabaseSeeder extends Seeder {
 	 */
 	public function run()
 	{
-		Eloquent::unguard();
-
+		//Eloquent::unguard();
+		$this->call('SentrySeeder');
+		$this->command->info('Sentry tables Seeded');
+		
+		$this->call('ContentSeeder');
+		$this->command->info('Content Table Seeded');
+		
 		// $this->call('UserTableSeeder');
 	}
 
