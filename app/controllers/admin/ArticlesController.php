@@ -4,5 +4,8 @@ use BaseController;
 
 class ArticlesController extends BaseController
 {
-
+	public function index()
+	{
+	
+	}
 }

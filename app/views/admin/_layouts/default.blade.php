@@ -3,21 +3,15 @@
 <head>
     <meta charset="utf-8">
     <title>L4 Site</title>
- 
-    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
-    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css" rel="stylesheet">
-    <link href="//netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet">
-    <link href="{{ URL::asset('assets/css/main.css') }}" rel="stylesheet">
- 
-    <script src="//code.jquery.com/jquery-1.9.1.min.js"></script>
-    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+   @include('admin._partials.assets') 
 </head>
 <body>
 <div>
-    
-    <hr>
- 
+	@include('admin._partials.header')
+    <div class="container">
+	
     @yield('main')
+	</div>
 </div>
 </body>
 </html>
