@@ -25,8 +25,8 @@ class Page extends \Eloquent
 	public static function getAll()
 	{
 		return DB::table('pages AS a')
-			->select('a.*, b.first_name')
-            ->join('users AS b', 'b.id', '=', 'a.user_id')
+			->select('a.*', 'b.first_name')
+            ->leftJoin('users AS b', 'b.id', '=', 'a.user_id')
             ->get();
 	
 	}

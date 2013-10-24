@@ -8,7 +8,7 @@ class PagesController extends BaseController
 	public function index()
 	{
 		return View::make('admin.pages.index')
-				->with('pages', Page::all());
+				->with('pages', Page::getAll());
 	}
 	
 	public function create()
