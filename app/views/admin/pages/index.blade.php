@@ -9,6 +9,7 @@
 			<tr>
 				<th>#</th>
 				<th>title</th>
+				<th>creator</th>
 				<th>when</th>
 				<th><i class="icon-cog"></i></th>
 			</tr>
@@ -18,6 +19,7 @@
 				<tr>
 					<td>{{$page->id}}</td>
 					<td>{{ HTML::linkRoute('admin.pages.show',$page->title, array($page->id)) }}</td>
+					<td>{{$page->first_name}}</td>
 					<td>{{$page->created_at}}</td>
 					<td>
 						{{ HTML::linkRoute('admin.pages.edit','Edit', array($page->id), array('class' => 'btn btn-success btn-mini')) }}

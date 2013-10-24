@@ -1,6 +1,6 @@
 <?php namespace App\Models;
 
-use Validator;
+use Validator, DB;
 
 class Page extends \Eloquent
 {
@@ -20,5 +20,14 @@ class Page extends \Eloquent
 	public static function validate($data)
 	{
 		return Validator::make($data, static::$rules);
+	}
+	
+	public static function getAll()
+	{
+		return DB::table('pages AS a')
+			->select('a.*, b.first_name')
+            ->join('users AS b', 'b.id', '=', 'a.user_id')
+            ->get();
+	
 	}
 }
