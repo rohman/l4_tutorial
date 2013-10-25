@@ -1,6 +1,7 @@
 @extends('admin._layouts.default')
 
 @section('main')
+	<h1>List Page</h1>
 	{{HTML::linkRoute('admin.pages.create', 'Add Page', array() ,array('class' => 'btn btn-primary'))}}
 	
 	@include('admin._partials.notifications')
