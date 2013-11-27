@@ -9,13 +9,13 @@ Route::get('/', array('as' => 'home', function()
 // Article list
 Route::get('blog', array('as' => 'article.list', function()
 {
-	return View::make('site::articles')->with('entries', Article::orderBy('created_at', 'desc')->get());
+	return View::make('site::articles')->with('entries', App\Models\Article::orderBy('created_at', 'desc')->get());
 }));
 
 // Single article
 Route::get('blog/{slug}', array('as' => 'article', function($slug)
 {
-	$article = Article::where('slug', $slug)->first();
+	$article = App\Models\Article::where('slug', $slug)->first();
 
 	if ( ! $article) App::abort(404, 'Article not found');
 
@@ -25,7 +25,7 @@ Route::get('blog/{slug}', array('as' => 'article', function($slug)
 // Single page
 Route::get('{slug}', array('as' => 'page', function($slug)
 {
-	$page = Page::where('slug', $slug)->first();
+	$page = App\Models\Page::where('slug', $slug)->first();
 
 	if ( ! $page) App::abort(404, 'Page not found');
 
