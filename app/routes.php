@@ -17,7 +17,6 @@ Route::get('/', function()
 });
 */
 
-Route::get('/', array('as'=>'homepate', 'uses' => 'App\Controllers\HomeController@showWelcome'));
 Route::get('admin/login', array('as'=>'admin.login', 'uses'=> 'App\Controllers\Admin\AuthController@getLogin'));
 Route::get('admin/logout', array('as'=>'admin.logout', 'uses'=> 'App\Controllers\Admin\AuthController@getLogout'));
 Route::post('admin/login', array('as' => 'admin.login.post', 'uses' => 'App\Controllers\Admin\AuthController@postLogin'));

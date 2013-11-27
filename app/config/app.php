@@ -115,7 +115,7 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'Cartalyst\Sentry\SentryServiceProvider',
-		// 'Krucas\Notification\NotificationServiceProvider'
+		'App\Site\SiteServiceProvider'
 	),
 
 	/*

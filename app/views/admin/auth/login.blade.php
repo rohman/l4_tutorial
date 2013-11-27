@@ -1,26 +1,22 @@
 @extends('admin._layouts.default')
 
 @section('main')
-	<div id="login" class="login">
+	<div id="login" class="login" style="margin-top:10px;width:30%" role="form">
 		{{ Form::open() }}
 			@if ($errors->has('login'))
                 <div class="alert alert-error">{{ $errors->first('login', ':message') }}</div>
             @endif
  
-			<div class="control-group">
+			<div class="form-group">
 				{{Form::label('email', 'Email :')}}
-				<div class="controls">
-					{{ Form::text('email') }}
-				</div>
+				{{ Form::text('email','' , array('class'=>'form-control')) }}
 			</div>
-			<div class="control-group">
+			<div class="form-group">
 				{{Form::label('password', 'Password :')}}
-				<div class="controls">
-					{{ Form::password('password') }}
-				</div>
+				{{ Form::password('password', array('class'=>'form-control')) }}
 			</div>
 			<div class="form-actions">
-				{{Form::submit('login', array('class' => 'btn btn-primary'))}}
+				{{Form::submit('login', array('class' => 'btn btn-primary btn-default'))}}
 			</div>
 		{{ Form::close() }}
 	</div>

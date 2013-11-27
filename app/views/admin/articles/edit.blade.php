@@ -4,17 +4,13 @@
 	<h2>Edit Page</h2>
 	@include('admin._partials.notifications')
 	{{ Form::model($article, array('method'=>'put', 'route' => array('admin.articles.update', $article->id) ) )}}
-		<div class="control-group">
+		<div class="form-group">
 			{{Form::label('title', 'Title : ')}}
-			<div class="controls">
-				{{ Form::text('title', $article->title)}}
-			</div>
+			{{ Form::text('title', $article->title, array('class'=>'form-control'))}}
 		</div>
-		<div class="control-group">
+		<div class="form-group">
 			{{Form::label('body', 'Content : ')}}
-			<div class="controls">
-				{{ Form::textarea('body', $article->body)}}
-			</div>
+			{{ Form::textarea('body', $article->body,array('class'=>'form-control'))}}
 		</div>
 		
 		<div class="form-actions">

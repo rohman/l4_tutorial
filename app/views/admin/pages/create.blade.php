@@ -3,18 +3,14 @@
 @section('main')
 	<h2>Create Page</h2>
 	@include('admin._partials.notifications')
-	{{ Form::open(array('route' => 'admin.pages.store', 'class' => 'form-control'))}}
-		<div class="control-group">
+	{{ Form::open(array('route' => 'admin.pages.store', 'role' =>'form'))}}
+		<div class="form-group">
 			{{Form::label('title', 'Title : ')}}
-			<div class="controls">
-				{{ Form::text('title')}}
-			</div>
+			{{ Form::text('title' ,'' , array('class'=>'form-control'))}}
 		</div>
-		<div class="control-group">
+		<div class="form-group">
 			{{Form::label('body', 'Content : ')}}
-			<div class="controls">
-				{{ Form::textarea('body')}}
-			</div>
+			{{ Form::textarea('body' ,'' , array('class'=>'form-control'))}}
 		</div>
 		
 		<div class="form-actions">
