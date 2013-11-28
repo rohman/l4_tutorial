@@ -25,4 +25,6 @@ Route::group(array('prefix' => 'admin', 'before'=>'auth.admin'), function(){
 	Route::any('/',		'App\Controllers\Admin\PagesController@index');
 	Route::resource('articles', 'App\Controllers\Admin\ArticlesController');
 	Route::resource('pages', 'App\Controllers\Admin\PagesController');
+	Route::get('changePassword',array('as'=>'admin.changePass','uses'=>'App\Controllers\Admin\AuthController@getChangePassword'));
+	Route::post('changePassword',array('as'=>'admin.changePass.post','uses'=>'App\Controllers\Admin\AuthController@postChangePassword'));
 });

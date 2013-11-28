@@ -38,5 +38,42 @@ class AuthController extends BaseController
 		
 		return Redirect::route('admin.login');
 	}
+	
+	public function getChangePassword()
+	{
+		return View::make('admin.auth.changepass');
+	}
+	
+	public function postChangePassword()
+	{
+		$rules = array(
+			'password' => 'required|min:5',
+			'password_confirm' => 'required|same:password'
+		);
+		
+		$validator = \Validator::make(Input::all(), $rules);
+		
+		if($validator->passes())
+		{
+			try
+			{
+				$user = Sentry::findUserById(Sentry::getUser()->id);
+				
+				$user->password = Input::get('password');
+				$user->save();
+			
+				return Redirect::route('admin.changePass')->with('message', 'The Password Has been changed');
+			}
+			catch(\Exception $e)
+			{
+				print_r($e);
+			}
+		}
+		else
+		{
+			return Redirect::back()->withErrors($validator)->withInput();
+		}
+		
+	}
 
 }

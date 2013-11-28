@@ -14,6 +14,10 @@
 			<a href="{{ URL::Route('admin.logout', 'Logout')}}">
 				<i class="fa fa-lock"></i> Logout
 			</a>
+		</li><li>
+			<a href="{{ URL::Route('admin.changePass', 'Change Password')}}">
+				<i class="fa fa-lock"></i> Change Password
+			</a>
 		</li>
 	</ul>
 @endif
